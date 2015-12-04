@@ -1,0 +1,23 @@
+<font face="barid">
+    <ion-modal-view>
+        <ion-header-bar style="background-color:#9F3228; border:0px;">
+            <h1 class="title" style="font-family:'barid'; color:white;">Checking In Your Place</h1>
+            <div class="buttons">
+                <button class="button button-clear" ng-click="hideCheckin()">
+                    <i class="ion-close-round" style="color:white;"></i>
+                </button>
+            </div>
+        </ion-header-bar>
+        <ion-content>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">PUT IN THE SLOT NUMBER:</span>
+                    <input type="text" placeholder="A102" style="font-family:'barid'; text-align:center;" id="checkpoint_place">
+                </label>
+            </div>
+            <center>
+                <button class="button button-block button-royal" ng-click="checkIN()" style="font-family:'barid';">CHECK IN&nbsp;&nbsp;&nbsp;&nbsp;<i class="ion-ios-circle-filled"></i></button>
+            </center>
+        </ion-content>
+    </ion-modal-view>
+</font>

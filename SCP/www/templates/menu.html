@@ -1,0 +1,140 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable b" id="bar">
+            <ion-nav-back-button style="font-family:barid; color:white;">Back
+            </ion-nav-back-button>
+            <ion-nav-title>
+                <p style="color:white;">Floor Selection</p>
+            </ion-nav-title>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left" style="color:white;">
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-ios-refresh-empty" ng-click="refreshfloor()" style="color:white;">
+                </button>
+                <!-- <button class="button button-icon button-clear ion-checkmark-round" ng-click="turnOn()" style="color:white;">
+                </button>
+                <button class="button button-icon button-clear ion-close-round" ng-click="turnOff()" style="color:white;">
+                </button> -->
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-stable" style="background-color:#9F3228; border:0px;">
+            <h1 class="title" style="font-family:barid;color:white;">Menus</h1>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list>
+                <ion-item menu-close href="#/app/allFloor">
+                    <center>Home&nbsp;&nbsp;&nbsp;&nbsp;<i class="ion-ios-home"></i></center>
+                </ion-item>
+                <div id="login_panel">
+                    </br>
+                    <center>
+                        <img src="{{imageProfile}}" width="160" height="160" style="border-radius:80px;">
+                    </center>
+                    <div class="list list-inset">
+                        <label class="item item-input">
+                            <font face="barid">
+                                <input type="text" placeholder="Username" style="font-family:barid;" id="username_normal_login">
+                        </label>
+                        <label class="item item-input">
+                            <font face="barid">
+                                <input type="password" placeholder="Password" style="font-family:barid;" id="password_normal_login">
+                        </label>
+                        </br>
+                        <button class="button button-full button-positive" style="border-radius:2px;border:0px;" ng-click="normal_login()">
+                            <font face="barid">LOGIN&nbsp;&nbsp;&nbsp;&nbsp;</font><i class="ion-log-in"></i>
+                        </button>
+                        <button class="button button-full button-positive" style="background-color:#344B8B; border-radius:2px;
+                    border:0px;" ng-click="faceBookLogin()">
+                            <font face="barid">Login with Facebook&nbsp;&nbsp;&nbsp;&nbsp;</font><i class="ion-social-facebook"></i>
+                        </button>
+                        <button class="button button-full button-positive" style="background-color:#D13430; border-radius:2px;
+                    border:0px;" ng-click="googleLogin()">
+                            <font face="barid">Login with Google+&nbsp;&nbsp;&nbsp;&nbsp;</font><i class="ion-social-googleplus"></i>
+                        </button>
+                        <button ng-click="regis()" class="button button-clear" style="font-size:14px; color:gray;
+                    font-family:barid; float:right;">
+                            Don't have account? Sign up Now.
+                        </button>
+                        </br>
+                        </br>
+                        </br>
+                        <p style="color:#696B74;">You don't login yet. Please login to see more information.</p>
+                    </div>
+                </div>
+                <div id="information_panel">
+                    </br>
+                    <center>
+                        <img src="{{imageProfile}}" width="160" height="160" style="border-radius:80px;" id="avartar" ng-click="showActionSheet()">
+                    </center>
+                    </br>
+                    <center>
+                        <label style="font-size:20px; color:#EB2D27;">{{facebook_firstName}}&nbsp;&nbsp;{{facebook_lastName}}</label>
+                        </br>
+                        <div id="slotCheckin">
+                            <label style="font-size:14px; color:gray; line-height:40px;">Your slot: {{checkInplace}}</label>
+                            </br>
+                            <button class="button button-positive" style="background-color:#D13430; border-radius:2px;
+                    border:0px;" ng-click="checkOUT()">CHECKOUT</button>
+                        </div>
+                    </center>
+                    </br>
+                    <ion-item>
+                        <center>
+                            <div id="car_unselect_div">
+                                <label style="font-size:14px; color:gray; ">
+                                    You don't select any car yet. </br>Please select any car information above the</br>logout button first.
+                                </label>
+                            </div>
+                            <div id="car_select_div">
+                                <center>
+                                    <label style="font-size:20px;">{{car_licenseUse}}</label>
+                                    </br>
+                                    <label style="font-size:12px;">{{car_modelUse}}</label>
+                                    </br>
+                                    <label style="font-size:12px; color:gray;">Start time: {{car_start_timeUse}}</label>
+                                    </br>
+                                    <label style="font-size:12px; color:gray;">Current Payment: {{payamount}} BTH.</label>
+                                    </br>
+                                </center>
+                                <button class="button button-full button-default" style="border-radius:2px;border:0px;" ng-click="reloadPayment()">
+                                    <font face="barid">RELOAD PAYMENT&nbsp;&nbsp;&nbsp;&nbsp;</font><i class="ion-ios-loop"></i>
+                                </button>
+                            </div>
+                        </center>
+                    </ion-item>
+                    <button class="button button-full button-royal" style="border-radius:2px;border:0px;" ng-click="showCheckin()">
+                        <font face="barid">CHECKIN&nbsp;&nbsp;&nbsp;&nbsp;</font><i class="ion-ios-circle-filled"></i>
+                    </button>
+                    <button class="button button-full button-assertive" style="border-radius:2px;border:0px;" ng-click="logout()">
+                        <font face="barid">LOGOUT&nbsp;&nbsp;&nbsp;&nbsp;</font><i class="ion-log-out"></i>
+                    </button>
+                    <ion-item style="font-size:14px; text-align:center; color:#1A8B83;" ng-click="addCar()">
+                        ADD MORE CAR&nbsp;&nbsp;&nbsp;&nbsp;<i class="ion-model-s" style="font-size:14px;"></i>
+                    </ion-item>
+                    <div ng-repeat="car in allCar">
+                        <ion-item ng-click="selectIndex($index)">
+                            <center>{{car.license}}
+                                <i class="{{car.class}}" style="float:right; color:green; font-size:20px;">
+                                </i>
+                            </center>
+                            <ion-option-button class="button-assertive" ng-click="deleteLicense($index)">
+                                DELETE
+                            </ion-option-button>
+                        </ion-item>
+                    </div>
+                </div>
+                <!-- <ion-item menu-close href="#/app/search">
+                    Search
+                </ion-item>
+                <ion-item menu-close href="#/app/allFloor">
+                    Home
+                </ion-item> -->
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

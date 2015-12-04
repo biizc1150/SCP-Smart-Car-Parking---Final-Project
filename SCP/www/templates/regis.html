@@ -1,0 +1,49 @@
+<font face="barid">
+    <ion-modal-view>
+        <ion-header-bar style="background-color:#9F3228; border:0px;">
+            <h1 class="title" style="font-family:'barid'; color:white;">Registration</h1>
+            <div class="buttons">
+                <button class="button button-clear" ng-click="closeLogin()">
+                    <i class="ion-close-round" style="color:white;"></i>
+                </button>
+            </div>
+        </ion-header-bar>
+        <ion-content>
+            <div class="list">
+                </br>
+                <center>
+                    <img src="{{imageProfile}}" width="160" height="160" style="border-radius:80px;" id="avartar" ng-click="showActionSheet()">
+                </center>
+                </br>
+                <div class="item item-divider">
+                    Username:
+                </div>
+                <div class="item">
+                    <input type="text" style="font-family:'barid'; width:100%;" id="username_regis_txt">
+                </div>
+                <div class="item item-divider">
+                    Password:
+                </div>
+                <div class="item">
+                    <input type="password" style="font-family:'barid'; width:100%;" id="password_regis_txt">
+                </div>
+                <div class="item item-divider">
+                    Firstname:
+                </div>
+                <div class="item">
+                    <input type="text" style="font-family:'barid'; width:100%;" id="firstname_regis_txt">
+                </div>
+                <div class="item item-divider">
+                    Lastname:
+                </div>
+                <div class="item">
+                    <input type="text" style="font-family:'barid'; width:100%;" id="lastname_regis_txt">
+                </div>
+            </div>
+            <center>
+                <button class="button button-block button-dark" ng-click="confirm_regis()" style="font-family:'barid';">Register</button>
+                <button id="reloadImage" style="display:none;"></button>
+            </center>
+        </ion-content>
+    </ion-modal-view>
+</font>

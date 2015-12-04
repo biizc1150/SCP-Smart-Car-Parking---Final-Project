@@ -1,0 +1,28 @@
+<font face="barid">
+    <ion-modal-view>
+        <ion-header-bar style="background-color:#9F3228; border:0px;">
+            <h1 class="title" style="font-family:'barid'; color:white;">Car Adding</h1>
+            <div class="buttons">
+                <button class="button button-clear" ng-click="closeAddCar()">
+                    <i class="ion-close-round" style="color:white;"></i>
+                </button>
+            </div>
+        </ion-header-bar>
+        <ion-content>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Your car license plat:</span>
+                    <input type="text" placeholder="AE 8316" style="font-family:'barid';" id="caradd_license">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Car model</span>
+                    <input type="text" placeholder="Honda Jazz 2012" style="font-family:'barid';" id="caradd_model">
+                </label>
+            </div>
+            <center>
+                <button class="button button-block button-dark" ng-click="userAddCar()" 
+                style="font-family:'barid';">ADD CAR&nbsp;&nbsp;&nbsp;&nbsp;<i class="ion-model-s"></i></button>
+            </center>
+        </ion-content>
+    </ion-modal-view>
+</font>

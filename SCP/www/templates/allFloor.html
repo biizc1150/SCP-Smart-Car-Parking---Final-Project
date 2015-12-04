@@ -1,0 +1,10 @@
+<ion-view>
+    <ion-content>
+        <ion-list><!-- href="#/app/floor/{{floor.id}}" -->
+            <ion-item ng-repeat="floor in allFlor"  ng-click="gotoFloor($index)">
+                {{floor.title}}
+                <label style="float:right;color:{{floor.color}}" id="available_number">{{floor.available}}</label>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
